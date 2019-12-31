@@ -1,0 +1,57 @@
+﻿    Nested example.
+
+<span>interpolation.</span>
+<p>
+    {{getAllData}}
+</p>
+<p [innerHtml]="propertyBindingExample"></p>
+
+<br />
+<span>Property Binding</span>
+
+<button [disabled]="isDisabled">Dont use interpolation..rather use Property Binding..</button>
+
+<h6>
+    <span>HTML Attr and Dom Property.</span>
+    <span>Angular data binding is with DOM Property and not HTML Attr</span>
+    <span> button [disabled] meaning- binding disabled property to button object..</span>
+    <span> Attributes are defined by HTMLa where properties are defined by DOM</span>
+    <span> Attributes initialised  DOM properties...once it complete it disappers..</span>
+    <span> Attributes value cannot change..whereas the properties values always changes..</span>
+</h6>
+
+<input type="text" value="indrajit" id="a" />
+<h6>a.value will give new values as per the current input value of text box. where as a.getAttribute('value') will always give indrajit as it is html attr..and the other is DOM Property.</h6>
+
+<h6>
+    <br />
+    <span>Not all HTML Attr have DOM Properties...so use Attr to bind...</span>
+    <span>Attribute Binding : [attr.colspan]='colSpan'>dsd </span>
+    <table border="1">
+        <tr>
+            <td>ds</td>
+            <td>sdsd</td>
+        </tr>
+        <tr>
+            <td [attr.colspan]='colSpan'>dsd</td>
+        </tr>
+    </table>
+
+</h6>
+
+<span>Class Binding</span> <br/>
+<span [class]="findAllClass">binding Multiple CSS Class</span>
+or
+<span class="fNew pNew"> binding Multiple CSS Class</span>
+or use NgClass
+<span class="fNew pNew" [ngClass]="requiredNew">binding Multiple CSS Class</span>
+or
+<span class="fNew pNew newMan" [class.pNew]="required">binding Multiple CSS Class</span>
+
+<br/><br/>
+<span>Event Binding</span><br />
+<h6>use (click) or on-Click for event binding.</h6>
+<button (click)="calMe()">(click)</button> or 
+<button on-click="calMe()">on-click</button> 
+
+

@@ -1,0 +1,185 @@
+﻿
+<br />
+<br />Event Binding example. *ngIf
+
+<span style="font-size:20px;">
+    <table border="1">
+
+        <tr>
+            <th>indra</th>
+            <th>abc</th>
+            <th>def</th>
+        </tr>
+        <tr>
+            <td>ghi</td>
+            <td>jhk</td>
+            <td>lmo</td>
+        </tr>
+        <tr [style.display]="isTrue? 'table-row' : 'none'">
+            <td>ghi</td>
+            <td>jhk</td>
+            <td>lmo</td>
+        </tr>
+
+        <tr *ngIf="isTrue">
+            <td>ghi</td>
+            <td>jhk</td>
+            <td>lmo</td>
+        </tr>
+
+    </table>
+    <button (click)="tableAction()">{{isTrue? 'Hide' : 'Show'}}Details</button>
+</span>
+
+
+<br />
+<br />Two way data binding. use ngModel..import it from FormsModule
+<br />
+<span style="font-size:20px;">
+    <input [(ngModel)]='name' />
+    you entered : {{name}}
+</span>
+
+
+<br />
+<br />*ngFor. Example.
+<br /><span style="font-size:20px;">
+    <table border="1">
+        <tr>
+            <th>name</th>
+            <th>age</th>
+            <th>sex</th>
+            <th>dob</th>
+        </tr>
+        <tr *ngFor="let a  of arrayOfStudents">
+            <td>{{a.name}}</td>
+            <td>{{a.age}}</td>
+            <td>{{a.sex}}</td>
+            <td>{{a.dob}}</td>
+        </tr>
+        <tr *ngIf="arrayOfStudents.length == 0">
+            <td colspan="4">No Details</td>
+        </tr>
+    </table>
+</span>
+
+
+
+<br />
+<br />*ngFor. Example and TrackBy to increase performance..as it does not update the DOM if no changes are made. while iterating.
+<br /><span style="font-size:20px;">
+    <table border="1">
+        <tr>
+            <th>Sl.no</th>
+            <th>name</th>
+            <th>age</th>
+            <th>sex</th>
+            <th>dob</th>
+            <th>Last Ele</th>
+            <th>First Ele</th>
+            <th>Is Even</th>
+        </tr>
+        <tr *ngFor="let a  of arrayOfStudents; trackBy:trackByCode; let i= index;let isFirst=first; let isLast=last; let isEven=even">
+            <td>{{i}}</td>
+            <td>{{a.name}}</td>
+            <td>{{a.age}}</td>
+            <td>{{a.sex}}</td>
+            <td>{{a.dob}}</td>
+            <td>{{isLast}}</td>
+            <td>{{isFirst}}</td>
+            <td>{{isEven}}</td>
+        </tr>
+        <tr *ngIf="arrayOfStudents.length == 0">
+            <td colspan="4">No Details</td>
+        </tr>
+    </table>
+    <button (click)="getAllEmployess()">Refresh</button>
+</span>
+
+
+
+<br />
+<br />using PIPES | for transforming data before displaying.
+<br /><span style="font-size:20px;">
+    <table border="1">
+        <tr>
+            <th>Sl.no</th>
+            <th>name</th>
+            <th>age</th>
+            <th>sex</th>
+            <th>dob</th>
+            <th>Last Ele</th>
+            <th>First Ele</th>
+            <th>Is Even</th>
+        </tr>
+        <tr *ngFor="let a  of arrayOfStudents; trackBy:trackByCode; let i= index;let isFirst=first; let isLast=last; let isEven=even">
+            <td>{{i}}</td>
+            <td>{{a.name | uppercase}}</td>
+            <td>{{a.age}}</td>
+            <td>{{a.sex | lowercase}}</td>
+            <td>{{a.dob | date:'fullDate' | uppercase}}</td>
+            <!--<td>{{a.dob | date:'dd/MM/y' | uppercase}}</td>-->
+            <td>{{isLast}}</td>
+            <td>{{isFirst}}</td>
+            <td>{{isEven}}</td>
+        </tr>
+        <tr *ngIf="arrayOfStudents.length == 0">
+            <td colspan="4">No Details</td>
+        </tr>
+    </table>
+    <button (click)="getAllEmployess()">Refresh</button>
+</span>
+
+
+<br />
+<br />Custom Pipes...create a new ts and import in app.module.ts
+<br /><span style="font-size:20px;">
+    <table border="1">
+        <tr>
+            <th>Sl.no</th>
+            <th>name</th>
+            <th>age</th>
+            <th>sex</th>
+            <th>dob</th>
+            <th>Last Ele</th>
+            <th>First Ele</th>
+            <th>Is Even</th>
+        </tr>
+        <tr *ngFor="let a  of arrayOfStudents; trackBy:trackByCode; let i= index;let isFirst=first; let isLast=last; let isEven=even">
+            <td>{{i}}</td>
+            <td>{{a.name | uppercase | stupipe:a.sex}}</td>
+            <td>{{a.age}}</td>
+            <td>{{a.sex | lowercase}}</td>
+            <td>{{a.dob | date:'fullDate' | uppercase}}</td>
+            <td>{{isLast}}</td>
+            <td>{{isFirst}}</td>
+            <td>{{isEven}}</td>
+        </tr>
+        <tr *ngIf="arrayOfStudents.length == 0">
+            <td colspan="4">No Details</td>
+        </tr>
+    </table>
+    <button (click)="getAllEmployess()">Refresh</button>
+</span>
+
+
+<br />
+<br />
+<br /><span style="font-size:20px;">
+    Show:<input type="radio" name="options" value="all" [(ngModel)]="onChange" />All({{getStudentCount()}})
+    <input type="radio" name="options"  value="M" [(ngModel)]="onChange"/>Male({{getMaleCount()}})
+    <input type="radio" name="options"  value="F" [(ngModel)]="onChange"/>Female({{getFemaleCount()}})
+
+      <table border="1">
+          <tr *ngFor="let a  of arrayOfStudents;">
+             <span *ngIf="onChange == a.sex || onChange == 'all'">
+                  <td>{{a.name}}</td>
+                  <td>{{a.age}}</td>
+                  <td>{{a.sex }}</td>
+                  <td>{{a.dob}}</td>
+
+              </span>
+          </tr>
+             
+      </table>
+</span>
