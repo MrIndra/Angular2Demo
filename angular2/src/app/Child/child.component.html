@@ -1,1 +1,15 @@
 ﻿
+<parent-app [all]="getAll()"
+        [male]="getMale()"
+        [female]="getFemale()"></parent-app>
+
+<span style="font-size:18px">
+    <table border="1">
+        <tr *ngFor="let a  of arrayOfStudents;">
+            <td>{{a.name}}</td>
+            <td>{{a.age}}</td>
+            <td>{{a.sex}}</td>
+            <td>{{a.dob}}</td>
+        </tr>
+    </table>
+</span>
