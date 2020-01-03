@@ -5,18 +5,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var app_service_1 = require("../Service/app.service");
 var Child = /** @class */ (function () {
-    function Child() {
-        this.arrayOfStudents = [
-            { name: 'indra', age: 26, sex: 'M', dob: '5/6/1992' },
-            { name: 'indrajit', age: 29, sex: 'M', dob: '1/12/1992' },
-            { name: 'indramaurya', age: 27, sex: 'F', dob: '2/14/1992' },
-            { name: 'indramauryadddddd', age: 27, sex: 'M', dob: '12/20/1992' },
-        ];
+    function Child(abcde) {
+        this.abcde = abcde;
         this.onChange = "all";
     }
+    Child.prototype.ngOnInit = function () {
+        console.log("init");
+        this.arrayOfStudents = this.abcde.getStudents();
+    };
+    Child.prototype.ngOnChanges = function () {
+        console.log("changes");
+    };
     Child.prototype.getAll = function () {
         return this.arrayOfStudents.length;
     };
@@ -33,7 +39,9 @@ var Child = /** @class */ (function () {
         core_1.Component({
             selector: 'child',
             templateUrl: './child.component.html',
-        })
+            providers: [app_service_1.ServiceClass]
+        }),
+        __metadata("design:paramtypes", [app_service_1.ServiceClass])
     ], Child);
     return Child;
 }());

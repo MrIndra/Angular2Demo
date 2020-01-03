@@ -78,6 +78,7 @@
     <Content Include="src\app\employee\app.employee.css" />
     <Content Include="src\app\employee\app.employee.html" />
     <TypeScriptCompile Include="src\app\Child\child.component.ts" />
+    <TypeScriptCompile Include="src\app\Interface\child.ts" />
     <TypeScriptCompile Include="src\app\employee\app.employee.ts" />
     <Content Include="src\app\app.module.js" />
     <Content Include="src\app\Parent\parent.component.html" />
@@ -113,7 +114,10 @@
   <ItemGroup>
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\LifeCycleChild\app.lifecycle.ts" />
+    <TypeScriptCompile Include="src\app\LifeCycleHooks\app.simple.ts" />
     <TypeScriptCompile Include="src\app\Parent\parent.component.ts" />
+    <TypeScriptCompile Include="src\app\Service\app.service.ts" />
     <TypeScriptCompile Include="src\app\student\student.component.ts" />
     <TypeScriptCompile Include="src\app\student\student.pipe.ts" />
     <TypeScriptCompile Include="src\main.ts" />

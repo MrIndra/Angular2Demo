@@ -8,10 +8,12 @@ import { Student } from './student/student.component';
 import { StudentPipe } from './student/student.pipe';
 import { Child } from './Child/child.component';
 import { Parent } from './Parent/parent.component';
+import { Simple } from './LifeCycleHooks/app.simple';
+import { Lifecycle } from './LifeCycleChild/app.lifecycle';
 
 @NgModule({
     imports: [BrowserModule, FormsModule],
-    declarations: [AppComponent, AppEmployee, Student, StudentPipe, Child, Parent],
-  bootstrap:    [ AppComponent ]
+    declarations: [AppComponent, AppEmployee, Student, StudentPipe, Child, Parent, Simple, Lifecycle],
+    bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

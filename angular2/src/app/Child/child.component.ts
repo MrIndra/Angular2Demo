@@ -1,18 +1,28 @@
-﻿import { Component } from '@angular/core'
+﻿import { Component, OnInit, OnChanges } from '@angular/core'
+import { ServiceClass } from '../Service/app.service';
+import { IChild } from '../Interface/child';
 
 @Component({
     selector: 'child',
     templateUrl: './child.component.html',
+    providers: [ServiceClass]
 })
 
-export class Child {
+export class Child implements OnInit {
 
-        arrayOfStudents: any[] = [
-            { name: 'indra', age: 26, sex: 'M', dob: '5/6/1992' },
-            { name: 'indrajit', age: 29, sex: 'M', dob: '1/12/1992' },
-            { name: 'indramaurya', age: 27, sex: 'F', dob: '2/14/1992' },
-            { name: 'indramauryadddddd', age: 27, sex: 'M', dob: '12/20/1992' },
-        ];
+
+    arrayOfStudents: IChild[];
+
+    constructor(private abcde: ServiceClass) { }
+
+    ngOnInit(): void {
+        console.log("init");
+        this.arrayOfStudents = this.abcde.getStudents();
+    }
+
+    ngOnChanges(): void {
+        console.log("changes");
+    }
 
     getAll(): number {
         return this.arrayOfStudents.length;

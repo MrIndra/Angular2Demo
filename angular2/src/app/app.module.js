@@ -15,13 +15,15 @@ var student_component_1 = require("./student/student.component");
 var student_pipe_1 = require("./student/student.pipe");
 var child_component_1 = require("./Child/child.component");
 var parent_component_1 = require("./Parent/parent.component");
+var app_simple_1 = require("./LifeCycleHooks/app.simple");
+var app_lifecycle_1 = require("./LifeCycleChild/app.lifecycle");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            declarations: [app_component_1.AppComponent, app_employee_1.AppEmployee, student_component_1.Student, student_pipe_1.StudentPipe, child_component_1.Child, parent_component_1.Parent],
+            declarations: [app_component_1.AppComponent, app_employee_1.AppEmployee, student_component_1.Student, student_pipe_1.StudentPipe, child_component_1.Child, parent_component_1.Parent, app_simple_1.Simple, app_lifecycle_1.Lifecycle],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);
