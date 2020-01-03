@@ -9,6 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
+var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
 var app_employee_1 = require("./employee/app.employee");
 var student_component_1 = require("./student/student.component");
@@ -22,7 +23,7 @@ var AppModule = /** @class */ (function () {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule],
             declarations: [app_component_1.AppComponent, app_employee_1.AppEmployee, student_component_1.Student, student_pipe_1.StudentPipe, child_component_1.Child, parent_component_1.Parent, app_simple_1.Simple, app_lifecycle_1.Lifecycle],
             bootstrap: [app_component_1.AppComponent]
         })

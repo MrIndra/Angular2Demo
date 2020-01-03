@@ -117,6 +117,7 @@
     <TypeScriptCompile Include="src\app\LifeCycleChild\app.lifecycle.ts" />
     <TypeScriptCompile Include="src\app\LifeCycleHooks\app.simple.ts" />
     <TypeScriptCompile Include="src\app\Parent\parent.component.ts" />
+    <TypeScriptCompile Include="src\app\Service\webApiService.ts" />
     <TypeScriptCompile Include="src\app\Service\app.service.ts" />
     <TypeScriptCompile Include="src\app\student\student.component.ts" />
     <TypeScriptCompile Include="src\app\student\student.pipe.ts" />

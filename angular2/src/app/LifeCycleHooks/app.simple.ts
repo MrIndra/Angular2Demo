@@ -9,5 +9,5 @@
 export class Simple{
 
     name: string = "indrjait";
-
+    
 }

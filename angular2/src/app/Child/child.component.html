@@ -1,5 +1,5 @@
 ﻿
-<parent-app [all]="getAll()"
+<parent-app *ngIf="arrayOfStudents" [all]="getAll()"
         [male]="getMale()"
         [female]="getFemale()"
         (Diplomat)="selectedButton($event)"></parent-app>
@@ -8,10 +8,10 @@
     <table border="1">
         <tr *ngFor="let a  of arrayOfStudents;">
                 <span *ngIf="onChange == a.sex || onChange == 'all'">
-                    <td>{{a.name}}</td>
-                    <td>{{a.age}}</td>
-                    <td>{{a.sex}}</td>
-                    <td>{{a.dob}}</td>
+                    <td>{{a.userId}}</td>
+                    <td>{{a.id}}</td>
+                    <td>{{a.title}}</td>
+                    <td>{{a.completed}}</td>
                 </span>
 </tr>
     </table>

@@ -10,15 +10,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var app_service_1 = require("../Service/app.service");
+var webApiService_1 = require("../Service/webApiService");
 var Child = /** @class */ (function () {
     function Child(abcde) {
         this.abcde = abcde;
         this.onChange = "all";
     }
+    //for normal calls.
+    //ngOnInit(): void {
+    //    console.log("init");
+    //    this.arrayOfStudents = this.abcde.getStudents();
+    //}
+    //for web api
     Child.prototype.ngOnInit = function () {
+        var _this = this;
         console.log("init");
-        this.arrayOfStudents = this.abcde.getStudents();
+        this.abcde.getStudents().subscribe(function (data) { return _this.arrayOfStudents = data; });
     };
     Child.prototype.ngOnChanges = function () {
         console.log("changes");
@@ -39,9 +46,9 @@ var Child = /** @class */ (function () {
         core_1.Component({
             selector: 'child',
             templateUrl: './child.component.html',
-            providers: [app_service_1.ServiceClass]
+            providers: [webApiService_1.webApiService]
         }),
-        __metadata("design:paramtypes", [app_service_1.ServiceClass])
+        __metadata("design:paramtypes", [webApiService_1.webApiService])
     ], Child);
     return Child;
 }());

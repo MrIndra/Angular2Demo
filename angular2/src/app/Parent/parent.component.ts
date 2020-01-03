@@ -1,5 +1,4 @@
 ﻿import {Component,Input,Output,EventEmitter } from '@angular/core'
-import { EventEmitter } from 'events';
 
 @Component({
     selector: 'parent-app',

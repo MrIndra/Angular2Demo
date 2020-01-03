@@ -1,11 +1,11 @@
 ﻿import { Component, OnInit, OnChanges } from '@angular/core'
-import { ServiceClass } from '../Service/app.service';
+import { webApiService } from '../Service/webApiService';
 import { IChild } from '../Interface/child';
 
 @Component({
     selector: 'child',
     templateUrl: './child.component.html',
-    providers: [ServiceClass]
+    providers: [webApiService]
 })
 
 export class Child implements OnInit {
@@ -13,11 +13,19 @@ export class Child implements OnInit {
 
     arrayOfStudents: IChild[];
 
-    constructor(private abcde: ServiceClass) { }
+    constructor(private abcde: webApiService) { }
+
+    //for normal calls.
+    //ngOnInit(): void {
+    //    console.log("init");
+    //    this.arrayOfStudents = this.abcde.getStudents();
+    //}
+
+    //for web api
 
     ngOnInit(): void {
         console.log("init");
-        this.arrayOfStudents = this.abcde.getStudents();
+        this.abcde.getStudents().subscribe(data => this.arrayOfStudents = data);
     }
 
     ngOnChanges(): void {
