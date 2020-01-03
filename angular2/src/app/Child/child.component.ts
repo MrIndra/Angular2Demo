@@ -27,4 +27,11 @@ export class Child {
     getFemale(): number {
         return this.arrayOfStudents.filter(x => x.sex == 'F').length;
     }
+
+    onChange: string = "all";
+
+
+    selectedButton(btn: string) {
+        this.onChange = btn;
+    }
  }

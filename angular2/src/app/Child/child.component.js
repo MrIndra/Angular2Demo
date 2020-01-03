@@ -15,6 +15,7 @@ var Child = /** @class */ (function () {
             { name: 'indramaurya', age: 27, sex: 'F', dob: '2/14/1992' },
             { name: 'indramauryadddddd', age: 27, sex: 'M', dob: '12/20/1992' },
         ];
+        this.onChange = "all";
     }
     Child.prototype.getAll = function () {
         return this.arrayOfStudents.length;
@@ -24,6 +25,9 @@ var Child = /** @class */ (function () {
     };
     Child.prototype.getFemale = function () {
         return this.arrayOfStudents.filter(function (x) { return x.sex == 'F'; }).length;
+    };
+    Child.prototype.selectedButton = function (btn) {
+        this.onChange = btn;
     };
     Child = __decorate([
         core_1.Component({

@@ -12,7 +12,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var Parent = /** @class */ (function () {
     function Parent() {
+        this.Diplomat = new core_1.EventEmitter();
     }
+    Parent.prototype.buttonSelected = function () {
+        console.log(this.onChange);
+        this.Diplomat.emit(this.onChange);
+    };
     __decorate([
         core_1.Input(),
         __metadata("design:type", Number)
@@ -25,6 +30,10 @@ var Parent = /** @class */ (function () {
         core_1.Input(),
         __metadata("design:type", Number)
     ], Parent.prototype, "female", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", core_1.EventEmitter)
+    ], Parent.prototype, "Diplomat", void 0);
     Parent = __decorate([
         core_1.Component({
             selector: 'parent-app',

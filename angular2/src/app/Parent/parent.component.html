@@ -3,7 +3,7 @@ This Is Parent and Child..@Input and @Output...
 <br/>
 <span style="font-size:19px">
     show
-    <input type="radio" name="sameForAll" value="all" [(ngModel)]="onChange" />All({{all}})
-    <input type="radio" name="sameForAll" value="M" [(ngModel)]="onChange"/>Male({{male}})
-    <input type="radio" name="sameForAll" value="F" [(ngModel)]="onChange"/>Female({{female}})
+    <input type="radio" name="sameForAll" value="all" [(ngModel)]="onChange" (change)="buttonSelected()"/>All({{all}})
+    <input type="radio" name="sameForAll" value="M" [(ngModel)]="onChange" (change)="buttonSelected()"/>Male({{male}})
+    <input type="radio" name="sameForAll" value="F" [(ngModel)]="onChange" (change)="buttonSelected()"/>Female({{female}})
 </span>
