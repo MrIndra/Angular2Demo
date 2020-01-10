@@ -13,6 +13,7 @@ var core_1 = require("@angular/core");
 var Lifecycle = /** @class */ (function () {
     function Lifecycle() {
     }
+    //here you can see the lifecycle hooks.....the DOM Properties updating on each change...
     Lifecycle.prototype.ngOnChanges = function (changes) {
         for (var propertyName in changes) {
             var change = changes[propertyName];

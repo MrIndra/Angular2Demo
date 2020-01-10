@@ -14,18 +14,19 @@ var webApiService_1 = require("../Service/webApiService");
 var Child = /** @class */ (function () {
     function Child(abcde) {
         this.abcde = abcde;
+        //for normal calls.
+        //ngOnInit(): void {
+        //    console.log("init");
+        //    this.arrayOfStudents = this.abcde.getStudents();
+        //}
+        //for web api
+        this.errorF = "please wait...";
         this.onChange = "all";
     }
-    //for normal calls.
-    //ngOnInit(): void {
-    //    console.log("init");
-    //    this.arrayOfStudents = this.abcde.getStudents();
-    //}
-    //for web api
     Child.prototype.ngOnInit = function () {
         var _this = this;
         console.log("init");
-        this.abcde.getStudents().subscribe(function (data) { return _this.arrayOfStudents = data; });
+        this.abcde.getStudents().subscribe(function (data) { return _this.arrayOfStudents = data; }, function (error) { return _this.errorF = error; });
     };
     Child.prototype.ngOnChanges = function () {
         console.log("changes");

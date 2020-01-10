@@ -10,6 +10,7 @@ export class Lifecycle implements OnChanges, OnInit {
     @Input()
     valueOfName: string;
 
+    //here you can see the lifecycle hooks.....the DOM Properties updating on each change...
     ngOnChanges(changes: SimpleChanges): void {
         for (let propertyName in changes) {
             let change = changes[propertyName];

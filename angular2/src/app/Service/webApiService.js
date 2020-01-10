@@ -11,14 +11,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
+var Observable_1 = require("rxjs/Observable");
 require("rxjs/add/operator/map");
+require("rxjs/add/operator/catch");
+require("rxjs/add/observable/throw");
 var webApiService = /** @class */ (function () {
+    //steps involved
+    //import http module in AppModule which is the root module.
+    // import http service in this current component
+    //inject the http service in this class..
+    //provider is required for services.
+    //An observable emits data items for subcribers or observers..
+    //many observers or subcribers can call the observale...
+    //many components can call the web services...
+    //so this component is OBSERVABLE>.
+    //An observer can call the observable with a call back function...that call back function will 
+    //have the data. returned by Obervable..
+    // allow cors.
+    //HANDLE ERRORS>..
     function webApiService(_http) {
         this._http = _http;
+        this.getData = this._http.get("https://jsonplaceholder.typicode.com/todos/").map(function (res) { return res.json(); });
     }
     webApiService.prototype.getStudents = function () {
-        return this._http.get("https://jsonplaceholder.typicode.com/todos/").map(function (response) { return response.json(); });
-        //provider is required for services.
+        return this._http.get("https://jsonplaceholder.typicode.com/todos/").map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    webApiService.prototype.handleError = function (error) {
+        console.log(error);
+        return Observable_1.Observable.throw(error);
     };
     webApiService = __decorate([
         core_1.Injectable(),

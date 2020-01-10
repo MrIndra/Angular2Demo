@@ -11,7 +11,7 @@ import { IChild } from '../Interface/child';
 export class Child implements OnInit {
 
 
-    arrayOfStudents: IChild[];
+    arrayOfStudents: any[];
 
     constructor(private abcde: webApiService) { }
 
@@ -22,10 +22,11 @@ export class Child implements OnInit {
     //}
 
     //for web api
+    errorF: string = "please wait...";
 
     ngOnInit(): void {
         console.log("init");
-        this.abcde.getStudents().subscribe(data => this.arrayOfStudents = data);
+        this.abcde.getStudents().subscribe(data => this.arrayOfStudents = data, error => this.errorF = error);
     }
 
     ngOnChanges(): void {

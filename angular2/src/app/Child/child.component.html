@@ -1,5 +1,6 @@
 ﻿
-<parent-app *ngIf="arrayOfStudents" [all]="getAll()"
+<parent-app *ngIf="arrayOfStudents" 
+        [all]="getAll()"
         [male]="getMale()"
         [female]="getFemale()"
         (Diplomat)="selectedButton($event)"></parent-app>
@@ -14,5 +15,11 @@
                     <td>{{a.completed}}</td>
                 </span>
 </tr>
+        <tr *ngIf="arrayOfStudents && arrayOfStudents.length==0">
+              <td colspan="4">No Data to display</td>
+        </tr>
+        <tr *ngIf="!arrayOfStudents">
+            <td colspan="4">{{errorF}}.</td>
+        </tr>
     </table>
 </span>

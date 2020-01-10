@@ -1,4 +1,5 @@
 ﻿import { Component, EventEmitter, Output } from '@angular/core';
+import { IChild } from '../Interface/child';
 
 @Component({
     selector: 'student',
@@ -15,7 +16,7 @@ export class Student {
 
     name: string = "tom";
 
-    arrayOfStudents: any[];
+    arrayOfStudents: IChild[];
 
     onChange: string = 'all';
 
