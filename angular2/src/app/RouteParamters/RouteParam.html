@@ -1,0 +1,15 @@
+﻿<h1>Route Params..</h1>
+
+<table>
+        <tr *ngFor="let a of serviceCalss">
+            <td>
+                {{a.userId}}
+            </td>
+            <td>{{a.id}}</td>
+            <td>{{a.completed}} &nbsp;</td>
+            <td>
+            <a [routerLink]="['/routeparam', a.id]">{{a.title}}</a>
+            </td>
+        </tr>
+
+</table>

@@ -112,10 +112,12 @@
     <TypeScriptCompile Include="src\app\Check2WaysDataBinding\Footer.ts" />
     <TypeScriptCompile Include="src\app\Check2WaysDataBinding\Header.ts" />
     <TypeScriptCompile Include="src\app\Child\child.component.ts" />
+    <TypeScriptCompile Include="src\app\Dependency Injection\Di.ts" />
     <TypeScriptCompile Include="src\app\Interface\child.ts" />
     <TypeScriptCompile Include="src\app\employee\app.employee.ts" />
     <Content Include="src\app\app.module.js" />
     <Content Include="src\app\Parent\parent.component.html" />
+    <Content Include="src\app\RouteParamters\RouteParam.html" />
     <Content Include="src\app\student\student.component.css" />
     <Content Include="src\app\student\student.component.html" />
     <Content Include="src\favicon.ico" />
@@ -244,8 +246,10 @@
     <TypeScriptCompile Include="src\app\NotFound\notfoundComponent.ts" />
     <TypeScriptCompile Include="src\app\Parent\parent.component.ts" />
     <TypeScriptCompile Include="src\app\routeFolder\home.component.ts" />
+    <TypeScriptCompile Include="src\app\RouteParamters\RouteParam.ts" />
     <TypeScriptCompile Include="src\app\Service\webApiService.ts" />
     <TypeScriptCompile Include="src\app\Service\app.service.ts" />
+    <TypeScriptCompile Include="src\app\Singleton\singleton.ts" />
     <TypeScriptCompile Include="src\app\student\student.component.ts" />
     <TypeScriptCompile Include="src\app\student\student.pipe.ts" />
     <TypeScriptCompile Include="src\main.ts" />

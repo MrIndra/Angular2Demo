@@ -25,11 +25,18 @@ var code_1 = require("./Check2WaysDataBinding/code");
 var home_component_1 = require("./routeFolder/home.component");
 var notfoundComponent_1 = require("./NotFound/notfoundComponent");
 var leader_1 = require("./leader");
+var RouteParam_1 = require("./RouteParamters/RouteParam");
+var singleton_1 = require("./Singleton/singleton");
+var Di_1 = require("./Dependency Injection/Di");
+var webApiService_1 = require("./Service/webApiService");
+var app_service_1 = require("./Service/app.service");
 var appRoutes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: home_component_1.Home },
     { path: 'list', component: leader_1.Leader },
-    { path: 'cc/:code', component: code_1.Code },
+    { path: 'routeparam', component: RouteParam_1.RouteParam },
+    { path: 'routeparam/:code', component: code_1.Code },
+    { path: 'singleton', component: singleton_1.Singleton },
     { path: '**', component: notfoundComponent_1.notFound } //should be at bottom. (more specific at top, more general at bottom.)
 ];
 //we need to tell angular router about new routes...so do RouterModule.forRoot(appRoutes)]
@@ -41,8 +48,9 @@ var AppModule = /** @class */ (function () {
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, router_1.RouterModule.forRoot(appRoutes, { useHash: true })],
             declarations: [app_component_1.AppComponent, app_employee_1.AppEmployee, student_component_1.Student, student_pipe_1.StudentPipe, child_component_1.Child, parent_component_1.Parent, app_simple_1.Simple,
-                app_lifecycle_1.Lifecycle, header_1.Header, Footer_1.Footer, home_component_1.Home, notfoundComponent_1.notFound, leader_1.Leader, code_1.Code],
-            bootstrap: [app_component_1.AppComponent]
+                app_lifecycle_1.Lifecycle, header_1.Header, Footer_1.Footer, home_component_1.Home, notfoundComponent_1.notFound, leader_1.Leader, code_1.Code, RouteParam_1.RouteParam, Di_1.Di, singleton_1.Singleton],
+            bootstrap: [app_component_1.AppComponent],
+            providers: [webApiService_1.webApiService, app_service_1.ServiceClass]
         })
     ], AppModule);
     return AppModule;

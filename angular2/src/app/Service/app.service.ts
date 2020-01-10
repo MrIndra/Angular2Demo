@@ -4,6 +4,8 @@ import { IChild } from '../Interface/child';
 @Injectable() //inject dependencies to our services..
 export class ServiceClass {
 
+    color: string = "yellow";
+
     getStudents(): IChild[]{
         return [
             { name: 'indra', age: 26, sex: 'M', dob: '5/6/1992' },

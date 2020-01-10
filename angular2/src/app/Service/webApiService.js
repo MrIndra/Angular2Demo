@@ -33,6 +33,10 @@ var webApiService = /** @class */ (function () {
         this._http = _http;
         this.getData = this._http.get("https://jsonplaceholder.typicode.com/todos/").map(function (res) { return res.json(); });
     }
+    webApiService.prototype.getDataWithCode = function (code) {
+        return this._http.get("https://jsonplaceholder.typicode.com/todos/" + code).map(function (res) { return res.json(); });
+    };
+    ;
     webApiService.prototype.getStudents = function () {
         return this._http.get("https://jsonplaceholder.typicode.com/todos/").map(function (response) { return response.json(); })
             .catch(this.handleError);

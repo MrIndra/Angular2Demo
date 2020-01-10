@@ -9,6 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var ServiceClass = /** @class */ (function () {
     function ServiceClass() {
+        this.color = "yellow";
         this.aServiceList = [
             { name: 'indra', age: 26, sex: 'M', dob: '5/6/1992' },
             { name: 'indrajit', age: 29, sex: 'M', dob: '1/12/1992' },

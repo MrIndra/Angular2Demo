@@ -34,6 +34,11 @@ export class webApiService {
 
     getData: Observable<any[]> = this._http.get("https://jsonplaceholder.typicode.com/todos/").map((res: Response) => <any[]>res.json());
 
+
+    getDataWithCode(code:string): Observable<any> {
+    return this._http.get("https://jsonplaceholder.typicode.com/todos/" + code).map((res: Response) => <any>res.json());
+};
+
     getStudents(): Observable<IChild[]>{
         return this._http.get("https://jsonplaceholder.typicode.com/todos/").map((response: Response) => <IChild[]>response.json())
             .catch(this.handleError);

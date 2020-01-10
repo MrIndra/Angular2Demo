@@ -3,22 +3,9 @@ import { webApiService } from '../Service/webApiService';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-    template: `
-        <table border="1" *ngIf="serviceCalss">
-        <tr>
-                   
-                    <td>{{serviceCalss.id}}</td>
-                    <td>{{serviceCalss.title}}</td>
-                    <td>{{serviceCalss.id}}</td>
-                    <td>{{serviceCalss.userId}}</td>
-</tr>
-
-</table>
-<span *ngIf="!serviceCalss">{{message}}</span>
-
-                `,
+    template: ``,
 })
-export class Code {
+export class Di {
     serviceCalss: any[];
     message: string;
     constructor(private EService: webApiService, private _activatedRoute: ActivatedRoute) {
@@ -30,12 +17,10 @@ export class Code {
         console.log("hitted");
         let codeParam: string = this._activatedRoute.snapshot.params['code'];
         this.EService.getDataWithCode(codeParam).subscribe(data => {
-            if (data == null) 
-            {
+            if (data == null) {
                 this.message = "no data";
             }
-             else
-            { this.serviceCalss = data }
+            else { this.serviceCalss = data }
         });
     }
 

@@ -12,14 +12,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var webApiService_1 = require("../Service/webApiService");
 var router_1 = require("@angular/router");
-var Code = /** @class */ (function () {
-    function Code(EService, _activatedRoute) {
+var Di = /** @class */ (function () {
+    function Di(EService, _activatedRoute) {
         this.EService = EService;
         this._activatedRoute = _activatedRoute;
         //providers are usud by Angular Injector for creating and injecting Dependency Injection...
         //Dependency provides singleton...single instance of a service
     }
-    Code.prototype.ngOnInit = function () {
+    Di.prototype.ngOnInit = function () {
         var _this = this;
         console.log("hitted");
         var codeParam = this._activatedRoute.snapshot.params['code'];
@@ -32,13 +32,13 @@ var Code = /** @class */ (function () {
             }
         });
     };
-    Code = __decorate([
+    Di = __decorate([
         core_1.Component({
-            template: "\n        <table border=\"1\" *ngIf=\"serviceCalss\">\n        <tr>\n                   \n                    <td>{{serviceCalss.id}}</td>\n                    <td>{{serviceCalss.title}}</td>\n                    <td>{{serviceCalss.id}}</td>\n                    <td>{{serviceCalss.userId}}</td>\n</tr>\n\n</table>\n<span *ngIf=\"!serviceCalss\">{{message}}</span>\n\n                ",
+            template: "",
         }),
         __metadata("design:paramtypes", [webApiService_1.webApiService, router_1.ActivatedRoute])
-    ], Code);
-    return Code;
+    ], Di);
+    return Di;
 }());
-exports.Code = Code;
-//# sourceMappingURL=code.js.map
+exports.Di = Di;
+//# sourceMappingURL=Di.js.map

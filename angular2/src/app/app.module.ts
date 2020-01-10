@@ -18,13 +18,21 @@ import { Code } from './Check2WaysDataBinding/code';
 import { Home } from './routeFolder/home.component';
 import { notFound } from './NotFound/notfoundComponent';
 import { Leader } from './leader';
+import { RouteParam } from './RouteParamters/RouteParam'
+import { Singleton } from './Singleton/singleton'
+import { Di } from './Dependency Injection/Di'
+
+import { webApiService } from './Service/webApiService';
+import { ServiceClass } from './Service/app.service';
 
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' }, //when localhost:880/projectname will run....
     { path: 'home', component: Home },
     { path: 'list', component: Leader },
-    { path: 'cc/:code', component: Code },
+    { path: 'routeparam', component: RouteParam },
+    { path: 'routeparam/:code', component: Code },
+    { path: 'singleton', component: Singleton },
     { path: '**', component: notFound } //should be at bottom. (more specific at top, more general at bottom.)
 ];
 
@@ -34,7 +42,8 @@ const appRoutes: Routes = [
 @NgModule({
     imports: [BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(appRoutes, { useHash: true })],
     declarations: [AppComponent, AppEmployee, Student, StudentPipe, Child, Parent, Simple,
-        Lifecycle, Header, Footer, Home, notFound, Leader, Code],
-    bootstrap:    [ AppComponent ]
+        Lifecycle, Header, Footer, Home, notFound, Leader, Code, RouteParam, Di, Singleton],
+    bootstrap: [AppComponent],
+    providers: [webApiService, ServiceClass]
 })
 export class AppModule { }
